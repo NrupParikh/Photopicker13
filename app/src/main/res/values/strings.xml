@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Picker13</string>
+    <string name="pick_image">Pick Only Image</string>
+    <string name="pick_video">Pick Only Video</string>
+    <string name="pick_multiple_images">Pick Multiple Images</string>
+    <string name="pick_multiple_videos">Pick Multiple Videos</string>
+    <string name="pick_image_or_video">Pick Image or Video</string>
+    <string name="pick_multiple_image_and_video">Pick Multiple Image And Video</string>
+    <string name="roundedcornerstransformation">RoundedCornersTransformation</string>
+    <string name="circlecroptransformation">CircleCropTransformation</string>
+    <string name="blurtransformation">BlurTransformation</string>
+    <string name="grayscaletransformation">GrayscaleTransformation</string>
+    <string name="cropTransformation">CropTransformation</string>
+    <string name="squareCropTransformation">SquareCropTransformation</string>
+    <string name="maskTransformation">MaskTransformation</string>
+    <string name="video_frame">Video Frame</string>
+    <string name="palette">Palette</string>
+    <string name="vibrantswatch">vibrantSwatch</string>
+    <string name="darkvibrantswatch">darkVibrantSwatch</string>
+    <string name="lightvibrantswatch">lightVibrantSwatch</string>
+    <string name="mutedswatch">mutedSwatch</string>
+    <string name="darkmutedswatch">darkMutedSwatch</string>
+    <string name="lightmutedswatch">lightMutedSwatch</string>
+    <string name="play_video">Play Video</string>
+
+    <string name="media_url_mp3">https://storage.googleapis.com/exoplayer-test-media-0/Jazz_In_Paris.mp3</string>
+    <!-- Big Buck Bunny video provided by the Blender Foundation.
+    (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org -->
+    <string name="media_url_mp4">https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4</string>
+    <string name="media_url_dash"><![CDATA[https://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&ipbits=0&expire=19000000000&signature=51AF5F39AB0CEC3E5497CD9C900EBFEAECCCB5C7.8506521BFC350652163895D4C26DEE124209AA9E&key=ik0]]></string>
+    <string name="mp4_2">http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4</string>
+    <string name="mp4_3">http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4</string>
+
+</resources>
