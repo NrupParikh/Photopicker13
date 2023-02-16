@@ -35,7 +35,8 @@ class MainFragment : Fragment() {
 
         val adapter = MyViewPagerAdapter((activity as MainActivity))
         adapter.apply {
-            addFragment(Tab8Fragment(), "Exoplayer")
+
+            addFragment(Tab9Fragment(), "Pick PDF")
             addFragment(Tab1Fragment(), "Only Image")
             addFragment(Tab2Fragment(), "Only Video")
             addFragment(Tab3Fragment(), "Multiple Images")
@@ -43,6 +44,7 @@ class MainFragment : Fragment() {
             addFragment(Tab5Fragment(), "Image or Video")
             addFragment(Tab6Fragment(), "Images and Videos")
             addFragment(Tab7Fragment(), "Coil")
+            addFragment(Tab8Fragment(), "Exoplayer")
 
         }
 

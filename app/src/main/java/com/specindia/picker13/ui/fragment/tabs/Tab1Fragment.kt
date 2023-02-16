@@ -1,6 +1,7 @@
 package com.specindia.picker13.ui.fragment.tabs
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.specindia.picker13.databinding.FragmentTab1Binding
+import com.specindia.picker13.utils.transformations.Util
 import kotlinx.coroutines.launch
 
 
@@ -27,6 +29,15 @@ class Tab1Fragment : Fragment() {
                 binding.tvPath.text = uri.toString()
                 lifecycleScope.launch {
                     binding.imageView.setImageURI(uri)
+
+                    val realPath = Util.getRealPathFromURI(uri,requireContext())
+                    if (realPath != null) {
+                        binding.tvRealPath.visibility = View.VISIBLE
+                        binding.tvRealPath.text = realPath.toString()
+                        Log.d("TAG realPath",realPath)
+                    }else{
+                        binding.tvRealPath.visibility = View.GONE
+                    }
                 }
             } else {
                 binding.tvPath.visibility = View.GONE

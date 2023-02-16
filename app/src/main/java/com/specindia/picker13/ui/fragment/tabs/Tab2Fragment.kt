@@ -22,6 +22,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import com.specindia.picker13.databinding.FragmentTab2Binding
+import com.specindia.picker13.utils.transformations.Util
 
 @UnstableApi
 class Tab2Fragment : Fragment() {
@@ -35,6 +36,7 @@ class Tab2Fragment : Fragment() {
 
     private val playbackStateListener: Player.Listener = playbackStateListener()
     private var pathUri: String = ""
+    private var realPath: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,17 @@ class Tab2Fragment : Fragment() {
                 if (uri != null) {
                     pathUri = uri.toString()
                     binding.tvPath.text = pathUri
+
+
+                    realPath = Util.getRealPathFromURI(uri, requireContext())
+                    if (realPath != null) {
+                        binding.tvRealPath.visibility = View.VISIBLE
+                        binding.tvRealPath.text = realPath.toString()
+                        Log.d("TAG realPath", realPath!!)
+                    } else {
+                        binding.tvRealPath.visibility = View.GONE
+                    }
+
                 } else {
                     Toast.makeText(requireActivity(), "No media selected", Toast.LENGTH_SHORT)
                         .show()
