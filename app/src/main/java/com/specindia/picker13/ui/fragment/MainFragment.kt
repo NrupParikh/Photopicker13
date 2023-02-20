@@ -37,6 +37,7 @@ class MainFragment : Fragment() {
         adapter.apply {
 
             addFragment(Tab9Fragment(), "Pick PDF")
+
             addFragment(Tab1Fragment(), "Only Image")
             addFragment(Tab2Fragment(), "Only Video")
             addFragment(Tab3Fragment(), "Multiple Images")
