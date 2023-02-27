@@ -10,9 +10,12 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import com.itextpdf.text.pdf.*
 import com.rajat.pdfviewer.PdfViewerActivity
 import com.specindia.picker13.databinding.FragmentTab9Binding
 import com.specindia.picker13.utils.transformations.Util
+import java.io.FileInputStream
+import java.io.FileOutputStream
 
 
 class Tab9Fragment : Fragment() {
@@ -33,6 +36,9 @@ class Tab9Fragment : Fragment() {
 
                 realPath = Util.getRealPathFromURI(docUri, requireContext())
                 if (realPath != null) {
+
+                   // reduceFileSize()
+
                     binding.tvRealPath.visibility = View.VISIBLE
                     binding.tvRealPath.text = realPath.toString()
                     Log.d("TAG realPath", realPath!!)
@@ -40,6 +46,24 @@ class Tab9Fragment : Fragment() {
                     binding.tvRealPath.visibility = View.GONE
                 }
             }
+    }
+
+    /**
+     * Reduce the PDF file size using iText Lib
+     * */
+    private fun reduceFileSize() {
+        val reader = PdfReader(realPath)
+        val stamper = PdfStamper(
+            reader,
+            FileOutputStream("/data/user/0/com.specindia.picker13/files/test.pdf")
+        )
+        val dict: PdfDictionary = reader.catalog
+        val reduce = PdfDictionary()
+        reduce.put(PdfName.FILTER, PdfName.FLATEDECODE)
+        dict.put(PdfName.FLATEDECODE, reduce)
+
+        stamper.setFullCompression()
+        stamper.close()
     }
 
     override fun onCreateView(

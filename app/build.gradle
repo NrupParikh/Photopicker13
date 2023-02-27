@@ -61,6 +61,7 @@ dependencies {
 
     // PDF Viewer
     implementation "com.github.afreakyelf:Pdf-Viewer:v1.0.7"
+    implementation 'com.itextpdf:itextpdf:5.5.13.3'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'
